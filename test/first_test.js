@@ -2,7 +2,7 @@
 // 1. Located in the test/ folder. 
 // 2. end with _test.js
 
-import one from '../public/js/one';
+import one from '../src/js/one';
 
 describe('Num', () => {
   it('should return 1', () => {

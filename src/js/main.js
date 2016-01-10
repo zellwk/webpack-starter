@@ -1,4 +1,6 @@
 // Test for hot-reload
+require('../scss/styles.scss');
+
 document.getElementById('content').textContent = 'BOOYAH!'
 
 // Tests for ES6

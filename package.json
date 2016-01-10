@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
-    "server-dev": "nodemon server.js",
+    "start": "node server.js production=true",
+    "dev": "node server.js",
+    "build": "rm -rf public && cp -pr views/ public && webpack",
     "test": "karma start"
   },
   "author": "",
@@ -17,11 +18,13 @@
     "serve-favicon": "^2.3.0"
   },
   "devDependencies": {
+    "autoprefixer-loader": "^3.1.0",
     "babel-core": "^6.4.0",
     "babel-loader": "^6.2.1",
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-stage-0": "^6.3.13",
     "chokidar": "^1.4.2",
+    "css-loader": "^0.23.1",
     "karma": "^0.13.19",
     "karma-chrome-launcher": "^0.2.2",
     "karma-mocha": "^0.2.1",
@@ -30,6 +33,9 @@
     "karma-sourcemap-loader": "^0.3.6",
     "karma-webpack": "^1.7.0",
     "mocha": "^2.3.4",
+    "node-sass": "^3.4.2",
+    "sass-loader": "^3.1.2",
+    "style-loader": "^0.13.0",
     "webpack": "^1.12.10",
     "webpack-dev-middleware": "^1.4.0",
     "webpack-hot-middleware": "^2.6.0"

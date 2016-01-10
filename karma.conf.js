@@ -1,14 +1,12 @@
 // Karma configuration
 // Generated on Sun Jan 10 2016 01:27:22 GMT+0800 (SGT)
-var webpackConfig = require('./webpack.config.js');
+var webpackConfig = require('./webpack.config.js').development;
 
-webpackConfig = Object.assign({}, {
-  devtool: webpackConfig.devtool,
-  module: webpackConfig.module,
-  plugins: webpackConfig.plugins
-});
+// entry and output determined by karma-webpack
+delete webpackConfig['context']
+delete webpackConfig['entry']
+delete webpackConfig['output']
 
-console.log(webpackConfig);
 module.exports = function(config) {
   config.set({
     basePath: '',
@@ -22,7 +20,7 @@ module.exports = function(config) {
     exclude: [],
 
     preprocessors: {
-      'test/index.js': ['webpack']
+      'test/index.js': ['webpack', 'sourcemap']
     },
 
     reporters: ['nyan'],
