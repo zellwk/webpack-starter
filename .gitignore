@@ -11,3 +11,5 @@ node_modules
 bower_components
 *.log
 
+#ignore generated files and folders
+public
